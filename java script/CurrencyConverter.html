@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="currencyconverter.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Currency Converter</h2>
+
+        <input id="amount" placeholder="Enter amount" type="number">
+
+        <div class="from">
+            <p>FROM</p>
+            <img id="fromFlag" src="https://flagsapi.com/US/flat/64.png">
+            <select id="fromCurrency">
+                <option value="USD">USD</option>
+                <option value="INR">INR</option>
+                <option value="NPR">NPR</option>
+                <option value="AUD">AUD</option>
+            </select>
+        </div>
+
+        <div class="to">
+            <p>TO</p>
+            <img id="toFlag" src="https://flagsapi.com/IN/flat/64.png">
+            <select id="toCurrency">
+                <option value="INR">INR</option>
+                <option value="USD">USD</option>
+                <option value="NPR">NPR</option>
+                <option value="AUD">AUD</option>
+            </select>
+        </div>
+
+        <p id="resultText">Converted amount appears here</p>
+
+        <button onclick="convert()">Convert</button>
+    </div>
+
+    <script src="converter.js"></script>
+
+</body>
+</html>

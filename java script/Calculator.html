@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="Calculator.css">
+</head>
+<body>
+
+<div class="calculator">
+    <input class="input" type="text" id="result" disabled>
+
+    <div class="numbers">
+        <button class="btn clear" onclick="clearScreen()">C</button>
+        <button class="btn op" onclick="display('/')">/</button>
+        <button class="btn op" onclick="display('*')">*</button>
+        <button class="btn op" onclick="display('-')">-</button>
+
+        <button class="btn" onclick="display('7')">7</button>
+        <button class="btn" onclick="display('8')">8</button>
+        <button class="btn" onclick="display('9')">9</button>
+        <button class="btn op" onclick="display('+')">+</button>
+
+        <button class="btn" onclick="display('4')">4</button>
+        <button class="btn" onclick="display('5')">5</button>
+        <button class="btn" onclick="display('6')">6</button>
+        <button class="btn eq" onclick="calculate()">=</button>
+
+        <button class="btn" onclick="display('1')">1</button>
+        <button class="btn" onclick="display('2')">2</button>
+        <button class="btn" onclick="display('3')">3</button>
+        <button class="btn" onclick="display('0')">0</button>
+
+        <button class="btn op" onclick="display('**')">^</button>
+    </div>
+</div>
+
+<script>
+  function display(val) {
+    document.getElementById("result").value += val;
+  }
+
+  function calculate() {
+    let expression = document.getElementById("result").value;
+    try {
+      let result = eval(expression); 
+      document.getElementById("result").value = result;
+    } catch (error) {
+      document.getElementById("result").value = "Error";
+    }
+  }
+
+  function clearScreen() {
+    document.getElementById("result").value = "";
+  }
+</script>
+
+</body>
+</html>
